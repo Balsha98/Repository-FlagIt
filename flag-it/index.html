@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="assets/media/map_logo.png">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+        integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="anonymous">
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin="anonymous" defer></script>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/script.js" defer></script>
+    <title>FlagIT | WorkOut Flagger</title>
+</head>
+
+<body>
+    <section id="grid_section">
+        <div id="user_info">
+            <div id="app_logo">
+                <img src="assets/media/map_logo.png" alt="FlagIT">
+                <h2>FlagIT</h2>
+            </div>
+            <p>Tap the map to flag a workout...</p>
+            <div id="workout_list">
+                <form class="hide_form">
+                    <div class="form_div">
+                        <div class="grid_layout hide_data">
+                            <label>Type:</label>
+                            <select>
+                                <option value="Running">Running</option>
+                                <option value="Cycling">Cycling</option>
+                            </select>
+                        </div>
+                        <div class="grid_layout hide_data">
+                            <label>Distance:</label>
+                            <input id="distance" type="text" placeholder="km">
+                        </div>
+                    </div>
+                    <div class="form_div">
+                        <div class="grid_layout hide_data">
+                            <label>Duration:</label>
+                            <input id="duration" type="text" placeholder="min">
+                        </div>
+                        <div class="grid_layout hide_data">
+                            <label>Cadence:</label>
+                            <input id="cadence" type="text" placeholder="step/min">
+                        </div>
+                        <!-- 
+                            Great suggestion by Jonas where know
+                            I can just toggle between the two inputs. 
+                        -->
+                        <div class="grid_layout switch_inputs">
+                            <label>Elev. Gain:</label>
+                            <input id="elevation" type="text" placeholder="meters">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div id="footer">
+                &copy; 2024 | Jonas & Balsha | All rights reserved.
+            </div>
+        </div>
+        <div id="map"></div>
+    </section>
+</body>
+
+</html>

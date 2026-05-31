@@ -1,0 +1,205 @@
+@import url("https://fonts.googleapis.com/css2?family=Urbanist&display=swap");
+
+/* VARIABLES */
+:root {
+    --smokeyWhite: rgb(240, 240, 240);
+    --darkGray: rgb(225, 225, 225);
+    --bodyBG: rgb(54, 54, 54);
+    --rColor: rgb(219, 68, 55);
+    --cColor: rgb(54, 54, 54);
+}
+
+/* GLOBAL SELECTORS */
+::-webkit-scrollbar {
+    display: none;
+}
+
+* {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Urbanist";
+    color: var(--bodyBG);
+    outline: none;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    padding: 25px;
+    background-color: var(--bodyBG);
+}
+
+/* MAIN SECTION STYLE */
+#grid_section {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-template-areas: "user map";
+    height: 100%;
+}
+
+/* INFO SECTION STYLE */
+#user_info {
+    grid-area: user;
+    position: relative;
+    padding: 25px;
+    background-color: var(--smokeyWhite);
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+}
+
+#app_logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#app_logo img {
+    width: 65px;
+}
+
+#app_logo h2 {
+    font-size: 32pt;
+}
+
+#user_info > p {
+    margin: 45px auto 30px auto;
+    font-size: 16pt;
+    text-align: center;
+}
+
+#workout_list {
+    height: 57.5vh;
+    margin: 30px auto;
+    border-radius: 10px;
+    overflow-y: scroll;
+}
+
+form,
+.flagged_workout {
+    width: 90%;
+    margin: 15px auto;
+    padding: 7.5px 15px;
+    background-color: var(--darkGray);
+    border-radius: inherit;
+    transition: all 1s;
+}
+
+.hide_form {
+    height: 0px;
+    margin: 0px auto;
+    padding: 0px;
+    opacity: 0;
+}
+
+.form_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.grid_layout {
+    display: grid;
+    align-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "lbl in";
+    margin: 5px 0px;
+}
+
+.hide_data,
+.switch_inputs {
+    display: none;
+}
+
+select,
+input {
+    width: 100px;
+    padding: 5px 10px;
+    font-size: 10pt;
+    background-color: var(--smokeyWhite);
+    border: unset;
+    border-radius: 2.5px;
+}
+
+::placeholder {
+    color: var(--bodyBG);
+}
+
+.flagged_workout {
+    padding: 15px;
+    border-left: 10px solid;
+    cursor: pointer;
+}
+
+.r_border {
+    border-left-color: var(--rColor);
+}
+
+.c_border {
+    border-left-color: var(--cColor);
+}
+
+.flagged_workout > p {
+    font-size: 14pt;
+    font-weight: bold;
+}
+
+.content_div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+}
+
+.content_div p {
+    width: 100px;
+}
+
+.metrics {
+    font-size: 8pt;
+    font-weight: bold;
+}
+
+#footer {
+    text-align: center;
+}
+
+/* MAP STYLE */
+#map {
+    grid-area: map;
+}
+
+/* POPUP STYLE */
+.leaflet-popup {
+    width: 275px;
+}
+
+.leaflet-popup-content-wrapper {
+    width: inherit;
+    padding: 15px 25px;
+    background-color: var(--smokeyWhite);
+    border-radius: 10px;
+}
+
+.leaflet-popup-content {
+    width: unset;
+    margin: 0px;
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: unset;
+}
+
+.leaflet-popup-close-button span {
+    font-size: 18pt;
+}
+
+.leaflet-popup-tip {
+    background-color: var(--smokeyWhite);
+}
+
+.r_popup .leaflet-popup-content-wrapper {
+    border-left: 10px solid var(--rColor);
+}
+
+.c_popup .leaflet-popup-content-wrapper {
+    border-left: 10px solid var(--cColor);
+}

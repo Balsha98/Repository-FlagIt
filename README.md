@@ -16,7 +16,7 @@ A browser-based interactive workout tracker built as part of Jonas Schmedtmann's
 
 ## Demo
 
-🔗 [Live Demo on Netlify]()
+🔗 [Live Demo on Netlify](https://myflagit.netlify.app/)
 
 ## Tech Stack
 

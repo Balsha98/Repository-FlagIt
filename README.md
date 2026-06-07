@@ -22,7 +22,7 @@ A browser-based interactive workout tracker built as part of Jonas Schmedtmann's
 
 - **HTML5** - Structure & Content
 - **CSS3** - Styling & Layout
-- **JavaScript (ES6+)** - Application Logic, OOP & DOM Manipulation
+- **JavaScript (ES6+)** - Application Logic, OOP, & DOM Manipulation
 - **Leaflet.js** - Interactive Map Rendering
 - **Geolocation API** - User Position Detection
 - **localStorage API** - Client-Side Data Persistence

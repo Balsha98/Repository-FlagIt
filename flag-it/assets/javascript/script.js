@@ -1,9 +1,9 @@
 "use strict";
 
 // VARIABLES
-const workoutList = querySelector("#workout_list");
+const workoutList = querySelector("#workout-list");
 const workoutForm = querySelector("form");
-const gridForms = querySelectorAll(".grid_layout");
+const gridForms = querySelectorAll(".grid-layout");
 const selectBox = querySelector("select");
 const inputs = querySelectorAll("input");
 const distIn = querySelector("#distance");
@@ -99,22 +99,22 @@ class App {
         const { lat, lng } = mapEvent.latlng;
         this.#mapCoords = [lat, lng];
 
-        workoutForm.classList.remove("hide_form");
-        gridForms.forEach((gridForm) => gridForm.classList.remove("hide_data"));
+        workoutForm.classList.remove("hide-form");
+        gridForms.forEach((gridForm) => gridForm.classList.remove("hide-data"));
         distIn.focus();
     }
 
     _hideResetForm() {
-        workoutForm.classList.add("hide_form");
-        gridForms.forEach((gridForm) => gridForm.classList.add("hide_data"));
+        workoutForm.classList.add("hide-form");
+        gridForms.forEach((gridForm) => gridForm.classList.add("hide-data"));
         inputs.forEach((input) => {
             input.value = "";
         });
     }
 
     _toggleInputs() {
-        cadIn.closest(".grid_layout").classList.toggle("switch_inputs");
-        elevIn.closest(".grid_layout").classList.toggle("switch_inputs");
+        cadIn.closest(".grid-layout").classList.toggle("switch-inputs");
+        elevIn.closest(".grid-layout").classList.toggle("switch-inputs");
         [cadIn, elevIn].forEach((input) => (input.value = ""));
     }
 
@@ -127,7 +127,7 @@ class App {
 
             // Check if data is valid.
             for (let input of inputs) {
-                if (!input.closest(".grid_layout").classList.contains("switch_inputs")) {
+                if (!input.closest(".grid-layout").classList.contains("switch-inputs")) {
                     if (input.value !== "") {
                         // Checking the input values.
                         // For this check, Jonas used a new Array
@@ -187,7 +187,7 @@ class App {
             .addTo(this.#map)
             .bindPopup(
                 L.popup({
-                    className: `${workType.charAt(0).toLowerCase()}_popup`,
+                    className: `${workType.charAt(0).toLowerCase()}-popup`,
                     autoClose: false,
                     closeOnClick: false,
                 })
@@ -204,9 +204,9 @@ class App {
 
         // Flagged workout div
         const newDiv = document.createElement("div");
-        newDiv.setAttribute("class", "flagged_workout");
+        newDiv.setAttribute("class", "flagged-workout");
         newDiv.setAttribute("data-id", `${wObj.id}`);
-        newDiv.classList.add(`${workType.charAt(0).toLowerCase()}_border`);
+        newDiv.classList.add(`${workType.charAt(0).toLowerCase()}-border`);
 
         // The div's title.
         const divTitle = document.createElement("p");
@@ -215,7 +215,7 @@ class App {
 
         // Workout data div.
         const divContent = document.createElement("div");
-        divContent.setAttribute("class", "content_div");
+        divContent.setAttribute("class", "content-div");
 
         // Checking the type of workout.
         const paceOrSpeed = checkType ? wObj.pace : wObj.speed;
@@ -250,10 +250,10 @@ class App {
     }
 
     _getIntoView(event) {
-        // No matter where we click inside the .flagged_workout div,
+        // No matter where we click inside the .flagged-workout div,
         // with closest() we always get the parent div.
         // In this case, we are using upwards DOM traversal.
-        const clickedWorkout = event.target.closest(".flagged_workout");
+        const clickedWorkout = event.target.closest(".flagged-workout");
 
         // Must check that
         // the div exists.
